@@ -1,0 +1,16 @@
+PODS:
+  - JDPageFeature (0.0.1)
+
+DEPENDENCIES:
+  - JDPageFeature (from `../`)
+
+EXTERNAL SOURCES:
+  JDPageFeature:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JDPageFeature: ac4ebe5356a0bc7323599fe84f551145251c65fe
+
+PODFILE CHECKSUM: 8259c6c6b8448747b8f8e79a58a9018071535deb
+
+COCOAPODS: 1.9.1
