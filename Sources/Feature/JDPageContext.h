@@ -20,8 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 发送事件
 /// @param event 事件对象
-/// @param featureID feature id，可传枚举
-- (void)sendEvent:(JDPageEvent *)event featureID:(NSInteger)featureID;
+- (void)sendEvent:(JDPageEvent *)event;
 
 @end
 

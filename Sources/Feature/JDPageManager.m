@@ -7,19 +7,8 @@
 
 #import "JDPageManager.h"
 
-@implementation JDPageFeatureConfig
-
-+ (instancetype)featureWith:(JDPageFeature *)feature featureID:(NSInteger)featureID {
-    JDPageFeatureConfig *config = [[JDPageFeatureConfig alloc] init];
-    config.feature = feature;
-    config.featureID = featureID;
-    return config;
-}
-
-@end
-
 @implementation JDPageManager {
-    NSMutableArray<JDPageFeatureConfig *> *_allFeatures;
+    NSMutableArray<JDPageFeature *> *_allFeatures;
 }
 
 - (instancetype)init {
@@ -29,37 +18,41 @@
     return self;
 }
 
-- (void)registerAll:(NSArray<JDPageFeatureConfig *> *)features {
-    [features enumerateObjectsUsingBlock:^(JDPageFeatureConfig *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+- (void)registerAll:(NSArray<JDPageFeature *> *)features {
+    [features enumerateObjectsUsingBlock:^(JDPageFeature *obj, NSUInteger idx, BOOL * _Nonnull stop) {
         [_allFeatures addObject:obj];
     }];
 }
 
-- (void)register:(JDPageFeatureConfig *)featureConfig {
+- (void)register:(JDPageFeature *)featureConfig {
     [_allFeatures addObject:featureConfig];
 }
 
-- (void)unregister:(JDPageFeatureConfig *)featureConfig {
+- (void)unregister:(JDPageFeature *)featureConfig {
     [_allFeatures removeObject:featureConfig];
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    [_allFeatures enumerateObjectsUsingBlock:^(JDPageFeatureConfig *obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.feature && [obj.feature respondsToSelector:anInvocation.selector]) {
-            [anInvocation invokeWithTarget:obj.feature];
+    [_allFeatures enumerateObjectsUsingBlock:^(JDPageFeature *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj && [obj respondsToSelector:anInvocation.selector]) {
+            [anInvocation invokeWithTarget:obj];
         }
     }];
 }
 
 - (JDPageFeature *)featureForTag:(NSInteger)featureID {
     __block JDPageFeature *feature = nil;
-    [_allFeatures enumerateObjectsUsingBlock:^(JDPageFeatureConfig * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [_allFeatures enumerateObjectsUsingBlock:^(JDPageFeature * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if (obj.featureID == featureID) {
-            feature = obj.feature;
+            feature = obj;
             *stop = YES;
         }
     }];
     return feature;
+}
+
+- (NSArray<JDPageFeature *> *)allFeature {
+    return _allFeatures.copy;
 }
 
 @end

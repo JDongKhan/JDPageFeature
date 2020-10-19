@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		330AA95062F4F74D7A51813C /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B9169A9BF1DF036F4537808 /* Pods_Demo.framework */; };
+		6935EFC6253D42E4002C5A3F /* DemoFeature1.m in Sources */ = {isa = PBXBuildFile; fileRef = 6935EFC5253D42E4002C5A3F /* DemoFeature1.m */; };
 		6980942A243C08D000A97FEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 69809429243C08D000A97FEC /* AppDelegate.m */; };
 		6980942D243C08D000A97FEC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6980942C243C08D000A97FEC /* SceneDelegate.m */; };
 		69809430243C08D000A97FEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6980942F243C08D000A97FEC /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6935EFC4253D42E4002C5A3F /* DemoFeature1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFeature1.h; sourceTree = "<group>"; };
+		6935EFC5253D42E4002C5A3F /* DemoFeature1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoFeature1.m; sourceTree = "<group>"; };
 		69809425243C08D000A97FEC /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69809428243C08D000A97FEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69809429243C08D000A97FEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,8 +56,16 @@
 				7F4BF91355FE7855864D7DB4 /* Pods-Demo.debug.xcconfig */,
 				D600BC602FF6CD5137B30AB3 /* Pods-Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		6935EFC3253D412C002C5A3F /* Feature */ = {
+			isa = PBXGroup;
+			children = (
+				6935EFC4253D42E4002C5A3F /* DemoFeature1.h */,
+				6935EFC5253D42E4002C5A3F /* DemoFeature1.m */,
+			);
+			path = Feature;
 			sourceTree = "<group>";
 		};
 		6980941C243C08D000A97FEC = {
@@ -78,6 +89,7 @@
 		69809427243C08D000A97FEC /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				6935EFC3253D412C002C5A3F /* Feature */,
 				69809428243C08D000A97FEC /* AppDelegate.h */,
 				69809429243C08D000A97FEC /* AppDelegate.m */,
 				6980942B243C08D000A97FEC /* SceneDelegate.h */,
@@ -217,6 +229,7 @@
 			files = (
 				69809430243C08D000A97FEC /* ViewController.m in Sources */,
 				6980942A243C08D000A97FEC /* AppDelegate.m in Sources */,
+				6935EFC6253D42E4002C5A3F /* DemoFeature1.m in Sources */,
 				6980943B243C08D200A97FEC /* main.m in Sources */,
 				6980942D243C08D000A97FEC /* SceneDelegate.m in Sources */,
 			);

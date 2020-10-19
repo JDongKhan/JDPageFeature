@@ -11,27 +11,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface JDPageFeatureConfig : NSObject
-@property (nonatomic, strong) JDPageFeature *feature;
-@property (nonatomic, assign) NSInteger featureID;
-
-+ (instancetype)featureWith:(JDPageFeature *)feature featureID:(NSInteger)featureID;
-
-@end
-
 @interface JDPageManager : NSObject<JDPageFeatureProtocol>
 
 //注册所有feature
-- (void)registerAll:(NSArray<JDPageFeatureConfig *> *)features;
+- (void)registerAll:(NSArray<JDPageFeature *> *)features;
 
 //注册单个
-- (void)register:(JDPageFeatureConfig *)featureConfig;
+- (void)register:(JDPageFeature *)featureConfig;
 
 //去除注册
-- (void)unregister:(JDPageFeatureConfig *)featureConfig;
+- (void)unregister:(JDPageFeature *)featureConfig;
 
 //根据id获取JDPageFeature
 - (JDPageFeature *)featureForTag:(NSInteger)featureID;
+
+//获取所有
+- (NSArray<JDPageFeature *> *)allFeature;
+
 
 @end
 

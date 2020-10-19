@@ -9,4 +9,8 @@
 
 @implementation JDPageFeature
 
+- (BOOL)respondsEvent:(NSInteger)event {
+    return NO;
+}
+
 @end

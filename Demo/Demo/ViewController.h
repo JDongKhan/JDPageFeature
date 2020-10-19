@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <JDPageFeature/JDPageViewController.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : JDPageViewController
 
 
 @end

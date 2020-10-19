@@ -11,13 +11,17 @@
 
 @implementation JDPageContext
 
-- (void)sendEvent:(JDPageEvent *)event featureID:(NSInteger)featureID {
+- (void)sendEvent:(JDPageEvent *)event {
     if ([self.pageViewController isKindOfClass:[JDPageViewController class]]) {
         JDPageViewController *pageVC = (JDPageViewController *)self.pageViewController;
-        JDPageFeature *feature = [pageVC.pageManager featureForTag:featureID];
-        if ([feature respondsToSelector:@selector(receiveEvent:context:)]) {
-            [feature receiveEvent:event context:self];
-        }
+        NSArray<JDPageFeature *> *allFeature = [pageVC.pageManager allFeature];
+        [allFeature enumerateObjectsUsingBlock:^(JDPageFeature * _Nonnull feature, NSUInteger idx, BOOL * _Nonnull stop) {
+            if ([feature respondsEvent:event.eventID]) {
+                if ([feature respondsToSelector:@selector(receiveEvent:context:)]) {
+                    [feature receiveEvent:event context:self];
+                }
+            }
+        }];
     }
 }
 
