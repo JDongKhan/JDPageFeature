@@ -9,6 +9,12 @@
 
 @implementation JDPageFeature
 
++ (instancetype)featureWithID:(NSInteger)featureID {
+    JDPageFeature *feature = [[JDPageFeature alloc] init];
+    feature.featureID = featureID;
+    return feature;
+}
+
 - (BOOL)respondsEvent:(NSInteger)event {
     return NO;
 }

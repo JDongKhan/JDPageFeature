@@ -7,12 +7,18 @@
 //
 
 #import "ViewController.h"
+#import "DemoFeature1.h"
+#import "JDFeatureDemoConfig.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController
+
+- (void)configFeature {
+    [self.pageManager register:[DemoFeature1 featureWithID:JDPageFeatureDemo1]];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -21,6 +21,7 @@
 /* Begin PBXFileReference section */
 		6935EFC4253D42E4002C5A3F /* DemoFeature1.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DemoFeature1.h; sourceTree = "<group>"; };
 		6935EFC5253D42E4002C5A3F /* DemoFeature1.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoFeature1.m; sourceTree = "<group>"; };
+		6935EFC8253D64C9002C5A3F /* JDFeatureDemoConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDFeatureDemoConfig.h; sourceTree = "<group>"; };
 		69809425243C08D000A97FEC /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69809428243C08D000A97FEC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		69809429243C08D000A97FEC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -64,6 +65,7 @@
 			children = (
 				6935EFC4253D42E4002C5A3F /* DemoFeature1.h */,
 				6935EFC5253D42E4002C5A3F /* DemoFeature1.m */,
+				6935EFC8253D64C9002C5A3F /* JDFeatureDemoConfig.h */,
 			);
 			path = Feature;
 			sourceTree = "<group>";

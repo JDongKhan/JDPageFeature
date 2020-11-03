@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 //feature id，可传枚举
 @property (nonatomic, assign) NSInteger featureID;
 
++ (instancetype)featureWithID:(NSInteger)featureID;
+
 //是否能响应事件
 - (BOOL)respondsEvent:(NSInteger)event;
 
